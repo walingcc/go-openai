@@ -98,7 +98,6 @@ type ChatCompletionMessage struct {
 	Role         string `json:"role"`
 	Content      string `json:"content,omitempty"`
 	Refusal      string `json:"refusal,omitempty"`
-    CustomUid    string `json:"customUid"`
 	MultiContent []ChatMessagePart
 
 	// This property isn't in the official documentation, but it's in
@@ -264,6 +263,7 @@ type ChatCompletionRequestExtensions struct {
 type ChatCompletionRequest struct {
 	Model    string                  `json:"model"`
 	Messages []ChatCompletionMessage `json:"messages"`
+    CustomUid    string `json:"customUid"`
 	// MaxTokens The maximum number of tokens that can be generated in the chat completion.
 	// This value can be used to control costs for text generated via API.
 	// Deprecated: use MaxCompletionTokens. Not compatible with o1-series models.
